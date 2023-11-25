@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Python Iris</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form action="/train" method="post">
+        <label for="classifier"></label>
+        <select name="classifier">
+            <option value="KNN">KNN</option>
+            <option value="SVM">SVM</option>
+            <option value="MLP">MLP</option>
+            <option value="DT">Decision Tree</option>
+            <option value="RF">Random Forest</option>
+        </select><br>
+        <label for="param1"></label>
+        <input type="text" name="param1" placeholder="Informe o Parâmetro 1" required><br>
+        <label for="param2"></label>
+        <input type="text" name="param2" placeholder="Informe o Parâmetro 2" required><br>
+        <label for="param3"></label>
+        <input type="text" name="param3" placeholder="Informe o Parâmetro 3" required><br>
+        <input type="submit" value="Treinar IA">
+    </form>
+</body>
+</html>

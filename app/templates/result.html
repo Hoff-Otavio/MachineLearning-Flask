@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div id="Aipapai">
+    <h2>Resultado</h2><br>
+    <p>Classificador: {{ results.classifier_name }}</p><br>
+    <p>parâmetros: {{ results.params }}</p><br>
+    <p>Acuracia: {{ results.accuracy }}</p><br>
+    <p>Pontuação média macro F1: {{ results.f1_macro }}</p>
+    <img src="data:image/png;base64,{{ results.img_data }}" alt="Matriz de Confusão"><br>
+    <button onclick="cuzin()">Get image</button>
+    </div>
+</body>
+    <script>
+        function cuzin(){
+        let a = document.body.appendChild(
+            document.createElement("a")
+        );
+        a.download = `dado.html`;
+        a.href = "data:text/html," + document.getElementById("Aipapai").innerHTML; 
+        a.click(); 
+    }
+    </script>
+</html>
